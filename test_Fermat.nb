@@ -1,0 +1,128 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4331,        119]
+NotebookOptionsPosition[      3946,        100]
+NotebookOutlinePosition[      4292,        115]
+CellTagsIndexPosition[      4249,        112]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Test", " ", "de", " ", "Fermat", " ", "para", " ", "numeros", " ", 
+    "primos"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", " ", "25"}], ";", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "numero", " ", "al", " ", "que", " ", "hemos", " ", "el", " ", "Test", 
+      " ", "de", " ", "Primalidad"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"b", "=", " ", 
+     RowBox[{"RandomInteger", "[", "100", "]"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "numero", " ", "entero", " ", "de", " ", "prueba", " ", "aleatorio"}], 
+     "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Print", " ", "[", 
+     RowBox[{"\"\< El numero a comprobar es \>\"", ",", "n"}], "]"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"valor", "=", 
+     RowBox[{"b", "^", 
+      RowBox[{"(", 
+       RowBox[{"n", "-", "1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Mod", "[", 
+       RowBox[{"valor", ",", "n"}], "]"}], "\[Equal]", "1"}], ",", " ", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+      "Print", "[", "\"\<El n\[UAcute]mero puede ser primo\>\"", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<Comprobacion \>\"", ",", 
+        RowBox[{"PrimeQ", "[", "n", "]"}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\"\<El numero no es primo \>\"", "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.6758000739679317`*^9, 3.6758001562343545`*^9}, {
+   3.6758002140119944`*^9, 3.6758003342835364`*^9}, {3.6758004316385384`*^9, 
+   3.675800445811801*^9}, {3.6758004960812116`*^9, 3.675800581891986*^9}, {
+   3.675800653274263*^9, 3.6758006549463415`*^9}, {3.6758007060292306`*^9, 
+   3.6758007215151863`*^9}, {3.6758007533934784`*^9, 
+   3.6758008339822893`*^9}, {3.6758013608955593`*^9, 
+   3.6758013629113035`*^9}, {3.6758016644456997`*^9, 3.675801713636442*^9}, {
+   3.675801768810035*^9, 3.675801855986565*^9}, {3.6758019098637505`*^9, 
+   3.675801934413001*^9}, {3.6758020260560684`*^9, 3.6758020692237377`*^9}, {
+   3.6758021431501837`*^9, 3.6758021459003625`*^9}, {3.6758022018080683`*^9, 
+   3.6758022342956743`*^9}, {3.6758024775101995`*^9, 3.675802596077821*^9}, 
+   3.675802646829119*^9, {3.675802715548254*^9, 3.6758027415786333`*^9}, {
+   3.6758029750005465`*^9, 3.675802978375862*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\" El numero a comprobar es \"\>", "\[InvisibleSpace]", "25"}],
+  SequenceForm[" El numero a comprobar es ", 25],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.6758025314656167`*^9, 3.6758025468577805`*^9}, 
+   3.6758025982344074`*^9, {3.6758026287450037`*^9, 3.6758026629870796`*^9}, {
+   3.6758027174234505`*^9, 3.6758027500949974`*^9}, {3.6758029708437395`*^9, 
+   3.6758029795010242`*^9}}],
+
+Cell[BoxData["\<\"El numero no es primo \"\>"], "Print",
+ CellChangeTimes->{{3.6758025314656167`*^9, 3.6758025468577805`*^9}, 
+   3.6758025982344074`*^9, {3.6758026287450037`*^9, 3.6758026629870796`*^9}, {
+   3.6758027174234505`*^9, 3.6758027500949974`*^9}, {3.6758029708437395`*^9, 
+   3.6758029795010242`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{707, 504},
+WindowMargins->{{118, Automatic}, {Automatic, 63}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2553, 56, 272, "Input"],
+Cell[CellGroupData[{
+Cell[3157, 82, 446, 8, 23, "Print"],
+Cell[3606, 92, 312, 4, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

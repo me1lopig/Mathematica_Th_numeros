@@ -1,0 +1,94 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2950,         85]
+NotebookOptionsPosition[      2706,         72]
+NotebookOutlinePosition[      3051,         87]
+CellTagsIndexPosition[      3008,         84]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "aproximaci\[OAcute]n", " ", "al", " ", "n\[UAcute]mero", " ", "de", " ", 
+    "numeos", " ", "primos", " ", "menor", " ", "que", " ", "N"}], " ", 
+   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{
+     "Input", "[", 
+      "\"\<Introduce el valor del que se quiere obtener el n\[UAcute]mero de \
+primos menores que el\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\< n\.ba de n\[UAcute]meros primos menores que \>\"", ",", "n"}], 
+    "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+   "Print", "[", "\"\<Valor de la primera aproximaci\[OAcute]n de Gauss\>\"", 
+    " ", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"N", "[", 
+    RowBox[{"n", "/", 
+     RowBox[{"Log", "[", "n", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{
+   "Print", "[", "\"\<Valor de la aproximaci\[OAcute]n de Legendre \>\"", 
+    "]"}], "\[IndentingNewLine]", 
+   RowBox[{"n", "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Log", "[", "n", "]"}], "-", "1.08366"}], ")"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "\"\<Valor de la integral de Gauss \>\"", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "1"}], "n"], 
+    RowBox[{"(", 
+     RowBox[{"1.", "/", 
+      RowBox[{"Log", "[", "n", "]"}]}], ")"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+   "Print", "[", "\"\<Valor de la funcion PrimePi de Mathematica \>\"", "]"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"PrimePi", "[", "n", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.719410146210832*^9, 3.719410226154148*^9}, {
+   3.719410278458174*^9, 3.719410295590414*^9}, {3.719410336278551*^9, 
+   3.719410358402871*^9}, {3.719410395138435*^9, 3.7194106457584915`*^9}, {
+   3.7194106768024664`*^9, 3.7194107199551506`*^9}, {3.719410763358264*^9, 
+   3.7194107714631157`*^9}, 3.719411674697751*^9, {3.7194120694836397`*^9, 
+   3.7194121408142385`*^9}, {3.7194122628771*^9, 3.719412289768166*^9}, {
+   3.7194127622052097`*^9, 3.719412896104192*^9}, 3.7194130121553326`*^9}]
+},
+WindowSize->{880, 631},
+WindowMargins->{{79, Automatic}, {Automatic, 11}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2145, 50, 280, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

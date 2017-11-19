@@ -1,0 +1,465 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     17407,        456]
+NotebookOptionsPosition[     16225,        410]
+NotebookOutlinePosition[     16570,        425]
+CellTagsIndexPosition[     16527,        422]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Encriptacion", " ", "RSA"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "para", " ", "este", " ", "caso", " ", "se", " ", "encripta", " ", "un", 
+    " ", "n\[UAcute]mero", " ", "mediante", " ", "flujo"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Generamos", " ", "dos", " ", "numeros", " ", "primos", " ", 
+    "aleatorios"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Los", " ", "seleccionados", " ", "no", " ", "son", " ", "del", " ", 
+    "todo", " ", "grandes", " ", "pero", " ", "sirven", " ", "como", " ", 
+    "ejemplo"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "=", 
+     RowBox[{"RandomPrime", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"10", "^", "29"}], ",", 
+        RowBox[{"10", "^", "30"}]}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"q", "=", 
+     RowBox[{"RandomPrime", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"10", "^", "29"}], ",", 
+        RowBox[{"10", "^", "30"}]}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.677602797013118*^9, 3.677602817169587*^9}, {
+   3.6776032933661804`*^9, 3.6776033752080297`*^9}, {3.6776034583916893`*^9, 
+   3.6776034627293797`*^9}, {3.67760349991376*^9, 3.6776035125410957`*^9}, {
+   3.6776035938026495`*^9, 3.6776037254787455`*^9}, {3.6776039289866796`*^9, 
+   3.677603932163768*^9}, {3.677604019519602*^9, 3.6776041113772907`*^9}, 
+   3.677604154084968*^9, {3.67769609852873*^9, 3.6776961093725863`*^9}, {
+   3.67847045902275*^9, 3.6784704990037513`*^9}, {3.6784705490279713`*^9, 
+   3.678470563267204*^9}, {3.6784706010265617`*^9, 3.6784706090497017`*^9}, 
+   3.6784709805279007`*^9, {3.6784710850926447`*^9, 3.6784711345863256`*^9}, {
+   3.6784715079902334`*^9, 3.6784715103611593`*^9}, {3.679765480321823*^9, 
+   3.6797654925175323`*^9}, {3.679765723192797*^9, 3.679765754135008*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Testeo", " ", "de", " ", "los", " ", "numeros", " ", "primos"}], 
+   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Comprobacion", " ", "de", " ", "la", " ", "longitud", " ", "de", " ", 
+    "los", " ", "numeros", " ", "primos"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"lp", "=", 
+     RowBox[{"IntegerLength", "[", "p", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"lq", "=", 
+     RowBox[{"IntegerLength", "[", "q", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"lp", "\[Equal]", "lq"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+     "Print", "[", 
+      "\"\<Los numeros tienen el mismo numero de digitos valores \
+aceptables\\n\>\"", "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+     "Print", "[", 
+      "\"\<Los numeros NO tienen el mismo numero de digitos valores no \
+aceptables \\n\>\"", "]"}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6776939701109595`*^9, 3.677693985717201*^9}, {
+   3.6784700320922422`*^9, 3.6784701753001776`*^9}, 3.678470208353444*^9, {
+   3.678470276318874*^9, 3.678470308333425*^9}, {3.678470904971799*^9, 
+   3.678470921935728*^9}, {3.6784710296654987`*^9, 3.6784710395674686`*^9}, {
+   3.6784711563292046`*^9, 3.6784711629768276`*^9}, {3.6784713813171744`*^9, 
+   3.6784714969947996`*^9}, {3.678471564872881*^9, 3.6784715656651344`*^9}, {
+   3.678471843009822*^9, 3.6784718617686157`*^9}}],
+
+Cell[BoxData["\<\"Los numeros tienen el mismo numero de digitos valores \
+aceptables\\n\"\>"], "Print",
+ CellChangeTimes->{{3.678471501008155*^9, 3.678471522859078*^9}, 
+   3.678471566965432*^9, 3.678471866072156*^9, 3.6784719440642347`*^9, 
+   3.6797654649764853`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Los", " ", "numeros", " ", "primos", " ", "no", " ", "deben", " ", 
+    "estar", " ", "cerca", " ", "la", " ", "diferencia", " ", "ha", " ", "de",
+     " ", "ser", " ", "de", " ", "10", " ", "digitos"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"diferencia", "=", 
+     RowBox[{"Abs", "[", 
+      RowBox[{"p", "-", "q"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"IntegerLength", "[", "p", "]"}], "\[Equal]", 
+      RowBox[{"IntegerLength", "[", 
+       RowBox[{"Max", "[", 
+        RowBox[{"p", ",", "q"}], "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+     "Print", "[", 
+      "\"\<Los numeros No estan cerca valores aceptables \\n\>\"", "]"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{
+     "Print", "[", 
+      "\"\<Los numeros son cercanos valores no aceptables \\n\>\"", "]"}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.6784715862694225`*^9, 3.6784716306129417`*^9}, {
+   3.6784717327997055`*^9, 3.67847183859348*^9}, {3.678471899952829*^9, 
+   3.6784720609689465`*^9}, 3.67922274880997*^9}],
+
+Cell[BoxData["\<\"Los numeros No estan cerca valores aceptables \\n\"\>"], \
+"Print",
+ CellChangeTimes->{3.678472085511021*^9, 3.679765464992092*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"valores", " ", "de", " ", "la", " ", "clave", " ", "publica"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{"p", " ", "q"}]}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "primer", " ", "numero", " ", "de", " ", "la", " ", "clave", " ", 
+     "publica"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Calculo", " ", "del", " ", "numero", " ", "de", " ", "Euler"}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"neuler", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"p", "-", "1"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"q", "-", "1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Segundo", " ", "numero", " ", "de", " ", "la", " ", "clave", " ", 
+     "publica"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"ne", "=", "2"}], ",", 
+      RowBox[{"ne", "\[LessEqual]", "neuler"}], ",", 
+      RowBox[{"ne", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"GCD", "[", 
+           RowBox[{"neuler", ",", "ne"}], "]"}], "\[Equal]", "1"}], ",", 
+         RowBox[{"Break", "[", "]"}]}], "]"}], ";"}]}], "\[IndentingNewLine]",
+      "]"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "\"\<Valores de la clave publica\\n\>\"", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<n=\>\"", ",", "n", ",", "\"\<\\n\>\""}], " ", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{"\"\<e=\>\"", ",", "ne"}], " ", "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.6776041573489475`*^9, 3.6776041866787286`*^9}, 
+   3.677604265198118*^9, {3.6776043852670126`*^9, 3.677604399715165*^9}, {
+   3.677604598181333*^9, 3.6776046060941825`*^9}, 3.677604658604125*^9, {
+   3.6776047768484077`*^9, 3.6776049071446133`*^9}, {3.6776049640927672`*^9, 
+   3.67760503311138*^9}, {3.677607197182254*^9, 3.6776072557604127`*^9}, {
+   3.6776077850992002`*^9, 3.6776078094095993`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Valores de la clave publica\\n\"\>"], "Print",
+ CellChangeTimes->{
+  3.6776087474792128`*^9, 3.677609397442627*^9, 3.6776097418004*^9, 
+   3.6776098423784285`*^9, 3.677693640286977*^9, 3.6776952114279275`*^9, 
+   3.6776958822191267`*^9, {3.6776960334121847`*^9, 3.677696043014722*^9}, 
+   3.6776961130388775`*^9, 3.6784698579575653`*^9, 3.6784705180765038`*^9, 
+   3.679765465007735*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"n=\"\>", "\[InvisibleSpace]", 
+   "583607990167596921818129659631931786513242952351867902583307", 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "n=", 583607990167596921818129659631931786513242952351867902583307, "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6776087474792128`*^9, 3.677609397442627*^9, 3.6776097418004*^9, 
+   3.6776098423784285`*^9, 3.677693640286977*^9, 3.6776952114279275`*^9, 
+   3.6776958822191267`*^9, {3.6776960334121847`*^9, 3.677696043014722*^9}, 
+   3.6776961130388775`*^9, 3.6784698579575653`*^9, 3.6784705180765038`*^9, 
+   3.679765465007735*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"e=\"\>", "\[InvisibleSpace]", "5"}],
+  SequenceForm["e=", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6776087474792128`*^9, 3.677609397442627*^9, 3.6776097418004*^9, 
+   3.6776098423784285`*^9, 3.677693640286977*^9, 3.6776952114279275`*^9, 
+   3.6776958822191267`*^9, {3.6776960334121847`*^9, 3.677696043014722*^9}, 
+   3.6776961130388775`*^9, 3.6784698579575653`*^9, 3.6784705180765038`*^9, 
+   3.679765465007735*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"(*", 
+   RowBox[{"Mensaje", " ", "a", " ", "encriptar"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"mensaje", "=", "200710454770419"}], " ", ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<Numero a encriptar \>\"", ",", "mensaje", ",", 
+     "\"\<\\n aunque este dato se supone secreto y no se debe de \
+exponer\>\""}], "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.67760395088078*^9, 3.6776039790502787`*^9}, {
+   3.6776050486906586`*^9, 3.6776050500741277`*^9}, {3.677605345085643*^9, 
+   3.677605473118187*^9}, {3.6776060629399233`*^9, 3.6776061816174245`*^9}, {
+   3.677606277047949*^9, 3.67760631305449*^9}, {3.6776063840889244`*^9, 
+   3.6776064217834373`*^9}, {3.6776065012927427`*^9, 
+   3.6776065050621557`*^9}, {3.677606578967172*^9, 3.677606586718857*^9}, {
+   3.6776068065337796`*^9, 3.6776069439022074`*^9}, {3.6776071775694113`*^9, 
+   3.6776071846014256`*^9}, 3.6776080206820765`*^9, {3.6776086673705873`*^9, 
+   3.6776086680542693`*^9}, 3.67760879201855*^9, {3.677608836100526*^9, 
+   3.677608856143675*^9}, {3.6776088947005806`*^9, 3.6776089058576365`*^9}, 
+   3.6797655527412105`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Numero a encriptar \"\>", "\[InvisibleSpace]", 
+   "200710454770419", 
+   "\[InvisibleSpace]", "\<\"\\naunque este dato se supone secreto y no se \
+debe de exponer\"\>"}],
+  SequenceForm[
+  "Numero a encriptar ", 200710454770419, 
+   "\naunque este dato se supone secreto y no se debe de exponer"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.677608008363226*^9, 3.6776080393655605`*^9}, {
+   3.677608670023748*^9, 3.677608689538952*^9}, 3.677608762857896*^9, 
+   3.677608793618323*^9, {3.6776088321859894`*^9, 3.6776088582117963`*^9}, 
+   3.6776089079639683`*^9, {3.6776097664271216`*^9, 3.677609773791704*^9}, 
+   3.677609857872037*^9, 3.6776936569484262`*^9, 3.677695888520722*^9, {
+   3.677696033428197*^9, 3.6776960461950674`*^9}, 3.677696117537365*^9, 
+   3.6784698628504763`*^9, 3.67847051808753*^9, 3.67976546502485*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.677607909751446*^9, 3.677607920694672*^9}, 
+   3.677608031130862*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Fase", " ", "de", " ", "encriptado"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"encriptado", "=", 
+     RowBox[{"PowerMod", "[", 
+      RowBox[{"mensaje", ",", "ne", ",", "n"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<El mensaje encriptado en forma encriptada es \>\"", ",", 
+     "encriptado"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.677607934853038*^9, 3.677607985509259*^9}, {
+  3.677608032903434*^9, 3.677608034482926*^9}, {3.677608936683874*^9, 
+  3.677608963307706*^9}, {3.6797655720511293`*^9, 3.679765583384564*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El mensaje encriptado es \"\>", "\[InvisibleSpace]", 
+   "301539089131787932812288065763239544737902264147282596293447"}],
+  SequenceForm[
+  "El mensaje encriptado es ", 
+   301539089131787932812288065763239544737902264147282596293447],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.677608964523675*^9, 3.677608980370861*^9}, {
+   3.6776097699097633`*^9, 3.677609776570712*^9}, 3.6776098606405935`*^9, 
+   3.6776936678285847`*^9, 3.6776958921817293`*^9, {3.6776960334427085`*^9, 
+   3.6776960546760416`*^9}, 3.6776961209941387`*^9, 3.67846986755033*^9, 
+   3.678470518097537*^9, 3.6797654650298543`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Clave", " ", "privada"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"d", "=", 
+     RowBox[{"PowerMod", "[", 
+      RowBox[{"ne", ",", 
+       RowBox[{"-", "1"}], ",", "neuler"}], "]"}]}], ";"}], " ", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "este", " ", "valor", " ", "debe", " ", "de", " ", "permanecer", " ", 
+     "solo", " ", "en", " ", "manos", " ", "del", " ", "receptor"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<El valor de la clave privada secreta es (ojo este dato solo lo debe \
+tener el receptor) : \>\"", ",", "d"}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.6776098101176157`*^9, 3.677609811263343*^9}, {
+  3.6776105449045095`*^9, 3.6776105459512463`*^9}, {3.677693629875453*^9, 
+  3.677693630927476*^9}, {3.677694679506278*^9, 3.677694679514284*^9}, {
+  3.6776955939650517`*^9, 3.6776956158198786`*^9}, {3.6776956566121283`*^9, 
+  3.6776956971523085`*^9}, {3.677695982254772*^9, 3.6776960247395787`*^9}, {
+  3.6797656142095647`*^9, 3.679765690954012*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El valor de la clave privada secreta es (ojo este dato solo lo \
+debe tener el receptor) : \"\>", "\[InvisibleSpace]", 
+   "466886392134077537454503727704310879187103106158736265717229"}],
+  SequenceForm[
+  "El valor de la clave privada secreta es (ojo este dato solo lo debe tener \
+el receptor) : ", 
+   466886392134077537454503727704310879187103106158736265717229],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.679765674419854*^9, 3.679765692916557*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Fase", " ", "de", " ", "desencriptado"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"desencriptado", "=", 
+     RowBox[{"PowerMod", "[", 
+      RowBox[{"encriptado", ",", "d", ",", "n"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<el mensaje desencriptado es \>\"", ",", " ", "desencriptado"}], 
+    "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.6776957640885115`*^9, 3.6776957693976564`*^9}, {
+  3.677695804705773*^9, 3.6776958432833953`*^9}, {3.6776959153255787`*^9, 
+  3.677695938807074*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"el mensaje desencriptado es \"\>", "\[InvisibleSpace]", 
+   "200710454770419"}],
+  SequenceForm["el mensaje desencriptado es ", 200710454770419],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6776959407399874`*^9, {3.6776960334567227`*^9, 3.67769606207209*^9}, 
+   3.6776961270958424`*^9, 3.678469873390727*^9, 3.678470518108526*^9, 
+   3.6797654650298543`*^9, 3.6797657031134305`*^9}]
+}, Open  ]]
+},
+WindowSize->{1102, 504},
+WindowMargins->{{-4, Automatic}, {Automatic, 1}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2024, 45, 152, "Input"],
+Cell[CellGroupData[{
+Cell[2606, 69, 1571, 33, 212, "Input"],
+Cell[4180, 104, 269, 4, 43, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4486, 113, 1259, 30, 172, "Input"],
+Cell[5748, 145, 149, 2, 43, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5934, 152, 2215, 54, 272, "Input"],
+Cell[CellGroupData[{
+Cell[8174, 210, 405, 6, 43, "Print"],
+Cell[8582, 218, 652, 13, 43, "Print"],
+Cell[9237, 233, 481, 10, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9767, 249, 1226, 24, 92, "Input"],
+Cell[10996, 275, 885, 16, 43, "Print"]
+}, Open  ]],
+Cell[11896, 294, 118, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[12039, 300, 669, 17, 72, "Input"],
+Cell[12711, 319, 658, 12, 23, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13406, 336, 1155, 26, 112, "Input"],
+Cell[14564, 364, 513, 10, 43, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15114, 379, 650, 17, 92, "Input"],
+Cell[15767, 398, 442, 9, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

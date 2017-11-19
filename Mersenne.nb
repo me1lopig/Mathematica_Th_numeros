@@ -1,0 +1,326 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12100,        317]
+NotebookOptionsPosition[     11363,        289]
+NotebookOutlinePosition[     11709,        304]
+CellTagsIndexPosition[     11666,        301]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Numeros", " ", "de", " ", "Mersenne"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"For", " ", "[", 
+   RowBox[{
+    RowBox[{"n", "=", "2"}], ",", 
+    RowBox[{"n", "\[LessEqual]", "40"}], ",", 
+    RowBox[{"n", "++"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<El numero \>\"", ",", "n", ",", "\"\< de Mersenne es \>\"", ",", 
+      RowBox[{
+       RowBox[{"2", "^", "n"}], "-", "1"}]}], "]"}]}], "\[IndentingNewLine]", 
+   "\t", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6758810857812104`*^9, 3.675881221792636*^9}, {
+   3.6758813268890085`*^9, 3.675881329836154*^9}, {3.67588249180015*^9, 
+   3.6758824934382944`*^9}, {3.675882726238171*^9, 3.6758827276070914`*^9}, {
+   3.6758890507769203`*^9, 3.6758890514247646`*^9}, {3.6759445697016406`*^9, 
+   3.6759445711169305`*^9}, {3.675945258943307*^9, 3.6759452667101955`*^9}, 
+   3.6759461775651703`*^9, 3.675946694720629*^9, 3.6759469129420166`*^9, {
+   3.675956796874278*^9, 3.675956809237389*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Numeros", " ", "de", " ", "Lucas"}], "-", "Lehmer"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Ln", "=", "4"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"primer", " ", "numero", " ", "para", " ", "n"}], "=", "2"}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"n", "=", "3"}], ",", 
+     RowBox[{"n", "\[LessEqual]", "20"}], ",", 
+     RowBox[{"n", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Ln", "=", 
+       RowBox[{
+        RowBox[{"Ln", "^", "2"}], "-", "2"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{
+       "\"\<El numero \>\"", ",", "n", ",", "\"\< Lucas-Lehmer \>\"", ",", 
+        "Ln"}], "]"}]}]}], "\[IndentingNewLine]", "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.675881285224954*^9, 3.6758813039784155`*^9}, {
+   3.675881349678607*^9, 3.6758813498573494`*^9}, {3.6758815177661343`*^9, 
+   3.675881670233244*^9}, 3.67588181105571*^9, {3.6758818853408422`*^9, 
+   3.6758818929737005`*^9}, {3.675882499154534*^9, 3.6758825028714776`*^9}, {
+   3.6758889919682345`*^9, 3.675888992267484*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Comprobacion", " ", "de", " ", "la", " ", "primalidad", " ", "de", " ", 
+    "los", " ", "numeros", " ", "de", " ", "Mersenne"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Ln", "=", "14"}], ";"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"es", " ", "valido", " ", "para", " ", "n"}], "=", "3"}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Do", "[", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"Print", "[", 
+       RowBox[{"n", ",", "\"\< \>\"", ",", "Ln", ",", "\"\< \>\"", ",", 
+        RowBox[{"GCD", "[", 
+         RowBox[{"Ln", ",", 
+          RowBox[{
+           RowBox[{"2", "^", "n"}], "-", "1"}]}], "]"}], ",", "\"\< \>\"", 
+        ",", 
+        RowBox[{
+         RowBox[{"2", "^", "n"}], "-", "1"}]}], "]"}], ";"}], "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NMersenne", "=", 
+       RowBox[{
+        RowBox[{"2", "^", "n"}], "-", "1"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", " ", "[", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{"Ln", ",", "NMersenne"}], "]"}], "\[Equal]", "0"}], ",", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<El numero \>\"", ",", "\"\<2^\>\"", ",", "n", ",", 
+          "\"\<-1=\>\"", ",", "NMersenne", ",", 
+          "\"\< de Mersenne es Primo\>\""}], "]"}], ",", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<El numero \>\"", ",", "\"\<2^\>\"", ",", "n", ",", 
+          "\"\<-1=\>\"", ",", "NMersenne", ",", 
+          "\"\< de Mersenne no es Primo\>\""}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"PrimeQ", "[", "NMersenne", "]"}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Ln", "=", 
+       RowBox[{
+        RowBox[{"Ln", "^", "2"}], "-", "2"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "3", ",", "30"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.675887994131693*^9, 3.6758880224519844`*^9}, {
+   3.6758880613578525`*^9, 3.675888154613291*^9}, {3.675888282825593*^9, 
+   3.675888304900358*^9}, {3.675888413285782*^9, 3.6758884303580494`*^9}, {
+   3.675888568480995*^9, 3.6758885696275883`*^9}, {3.675888617948185*^9, 
+   3.6758886691547775`*^9}, {3.675888807790346*^9, 3.6758888087209578`*^9}, {
+   3.6758889518044577`*^9, 3.6758889524419155`*^9}, {3.6758890025471573`*^9, 
+   3.675889028521942*^9}, {3.6758890982884436`*^9, 3.675889163616003*^9}, {
+   3.675889208912965*^9, 3.6758892132456646`*^9}, {3.6758892447684603`*^9, 
+   3.6758892583699265`*^9}, {3.675889329997924*^9, 3.6758893737416325`*^9}, {
+   3.675889420847386*^9, 3.67588942129813*^9}, {3.675889528325764*^9, 
+   3.675889538585608*^9}, {3.675889595462446*^9, 3.6758895971619835`*^9}, {
+   3.675889693103443*^9, 3.6758897877348647`*^9}, 3.6758898413392167`*^9, {
+   3.6758898897361383`*^9, 3.675889891436*^9}, {3.6758899350262613`*^9, 
+   3.675889965986126*^9}, {3.675890000304412*^9, 3.6758900344627094`*^9}}],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{3.6759585727694373`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Comprobacion", " ", "de", " ", "la", " ", "primalidad", " ", "de", " ", 
+    "los", " ", "numeros", " ", "de", " ", "Mersenne"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Ln", "=", "14"}], ";", " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"es", " ", "valido", " ", "para", " ", "n"}], "=", "3"}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Do", "[", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"Print", "[", 
+       RowBox[{"n", ",", "\"\< \>\"", ",", "Ln", ",", "\"\< \>\"", ",", 
+        RowBox[{"GCD", "[", 
+         RowBox[{"Ln", ",", 
+          RowBox[{
+           RowBox[{"2", "^", "n"}], "-", "1"}]}], "]"}], ",", "\"\< \>\"", 
+        ",", 
+        RowBox[{
+         RowBox[{"2", "^", "n"}], "-", "1"}]}], "]"}], ";"}], "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"NMersenne", "=", 
+       RowBox[{
+        RowBox[{"2", "^", "n"}], "-", "1"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", " ", "[", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{"Ln", ",", "NMersenne"}], "]"}], "\[Equal]", "0"}], ",", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<El numero \>\"", ",", "\"\<2^\>\"", ",", "n", ",", 
+          "\"\<-1=\>\"", ",", "NMersenne", ",", 
+          "\"\< de Mersenne es Primo\>\""}], "]"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Ln", "=", 
+       RowBox[{
+        RowBox[{"Ln", "^", "2"}], "-", "2"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "3", ",", "50"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6759585699223127`*^9, 3.675958583952859*^9}, {
+  3.6759586142134857`*^9, 3.675958637705361*^9}, {3.6759592343387814`*^9, 
+  3.6759592365497227`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El numero \"\>", "\[InvisibleSpace]", "\<\"2^\"\>", 
+   "\[InvisibleSpace]", "3", "\[InvisibleSpace]", "\<\"-1=\"\>", 
+   "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\" de Mersenne es Primo\"\>"}],
+  SequenceForm["El numero ", "2^", 3, "-1=", 7, " de Mersenne es Primo"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6759592387320385`*^9, 3.6759600540352526`*^9, 
+  3.6759624247563934`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El numero \"\>", "\[InvisibleSpace]", "\<\"2^\"\>", 
+   "\[InvisibleSpace]", "5", "\[InvisibleSpace]", "\<\"-1=\"\>", 
+   "\[InvisibleSpace]", "31", 
+   "\[InvisibleSpace]", "\<\" de Mersenne es Primo\"\>"}],
+  SequenceForm["El numero ", "2^", 5, "-1=", 31, " de Mersenne es Primo"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6759592387320385`*^9, 3.6759600540352526`*^9, 
+  3.6759624247578945`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El numero \"\>", "\[InvisibleSpace]", "\<\"2^\"\>", 
+   "\[InvisibleSpace]", "7", "\[InvisibleSpace]", "\<\"-1=\"\>", 
+   "\[InvisibleSpace]", "127", 
+   "\[InvisibleSpace]", "\<\" de Mersenne es Primo\"\>"}],
+  SequenceForm["El numero ", "2^", 7, "-1=", 127, " de Mersenne es Primo"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6759592387320385`*^9, 3.6759600540352526`*^9, 
+  3.6759624247598963`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El numero \"\>", "\[InvisibleSpace]", "\<\"2^\"\>", 
+   "\[InvisibleSpace]", "13", "\[InvisibleSpace]", "\<\"-1=\"\>", 
+   "\[InvisibleSpace]", "8191", 
+   "\[InvisibleSpace]", "\<\" de Mersenne es Primo\"\>"}],
+  SequenceForm["El numero ", "2^", 13, "-1=", 8191, " de Mersenne es Primo"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6759592387320385`*^9, 3.6759600540352526`*^9, 
+  3.6759624247608967`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El numero \"\>", "\[InvisibleSpace]", "\<\"2^\"\>", 
+   "\[InvisibleSpace]", "17", "\[InvisibleSpace]", "\<\"-1=\"\>", 
+   "\[InvisibleSpace]", "131071", 
+   "\[InvisibleSpace]", "\<\" de Mersenne es Primo\"\>"}],
+  SequenceForm["El numero ", "2^", 17, "-1=", 131071, " de Mersenne es Primo"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6759592387320385`*^9, 3.6759600540352526`*^9, 
+  3.675962424761897*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El numero \"\>", "\[InvisibleSpace]", "\<\"2^\"\>", 
+   "\[InvisibleSpace]", "19", "\[InvisibleSpace]", "\<\"-1=\"\>", 
+   "\[InvisibleSpace]", "524287", 
+   "\[InvisibleSpace]", "\<\" de Mersenne es Primo\"\>"}],
+  SequenceForm["El numero ", "2^", 19, "-1=", 524287, " de Mersenne es Primo"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6759592387320385`*^9, 3.6759600540352526`*^9, 
+  3.675962424762898*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El numero \"\>", "\[InvisibleSpace]", "\<\"2^\"\>", 
+   "\[InvisibleSpace]", "31", "\[InvisibleSpace]", "\<\"-1=\"\>", 
+   "\[InvisibleSpace]", "2147483647", 
+   "\[InvisibleSpace]", "\<\" de Mersenne es Primo\"\>"}],
+  SequenceForm[
+  "El numero ", "2^", 31, "-1=", 2147483647, " de Mersenne es Primo"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6759592387320385`*^9, 3.6759600540352526`*^9, 
+  3.6759624404409504`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{938, 554},
+WindowMargins->{{Automatic, 130}, {25, Automatic}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1051, 22, 92, "Input"],
+Cell[1611, 44, 1282, 31, 172, "Input"],
+Cell[2896, 77, 3165, 71, 212, "Input"],
+Cell[6064, 150, 71, 1, 31, "Input"],
+Cell[CellGroupData[{
+Cell[6160, 155, 1890, 50, 172, "Input"],
+Cell[CellGroupData[{
+Cell[8075, 209, 455, 9, 23, "Print"],
+Cell[8533, 220, 457, 9, 23, "Print"],
+Cell[8993, 231, 459, 9, 23, "Print"],
+Cell[9455, 242, 463, 9, 23, "Print"],
+Cell[9921, 253, 465, 9, 23, "Print"],
+Cell[10389, 264, 465, 9, 23, "Print"],
+Cell[10857, 275, 478, 10, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
